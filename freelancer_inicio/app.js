@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
         inputTel.addEventListener('input', validar)
         inputEmail.addEventListener('input', validar)
         inputMessage.addEventListener('input', validar)
+
+        formulario.addEventListener('submit', e => e.preventDefault());
+        
         btnReset.addEventListener('click', function (e) {
             e.preventDefault()
             email.email = ''
@@ -38,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //*Funciones
     function validar(e) {
+
         if (e.target.value.trim() === '') {
             mostrarAlerta(`El campo ${e.target.id} es obligatorio`, e.target.parentElement)
             email[e.target.id] = ''
